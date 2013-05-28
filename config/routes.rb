@@ -1,11 +1,9 @@
 RssReader::Application.routes.draw do
-  resources :users do
+  resources :users
+
+  resources :feeds do
     member do
-      resources :feeds do
-        member do
-          resources :entries
-        end
-      end
+      resources :entries
     end
   end
 

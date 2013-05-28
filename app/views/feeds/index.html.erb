@@ -8,7 +8,7 @@
 <script type="text/javascript">
   $(function () {
     window.feedsData = <%= Feed.includes(:entries).all.to_json(:include => :entries).html_safe %>;
-
+    console.log("initializing window.R")
     window.R.initialize(
       $("#sidebar")[0],
       $("#content")[0],

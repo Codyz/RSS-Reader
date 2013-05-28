@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class Feed < ActiveRecord::Base
-  attr_accessible :url, :user_id
+  attr_accessible :url, :user_id, :title
 
   validates :user, :url, presence: true
 

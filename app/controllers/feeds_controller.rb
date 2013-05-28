@@ -18,7 +18,7 @@ class FeedsController < ApplicationController
   end
 
   def index
-    @feeds = Feed.find_by_user_id(params[:id])
+    @feeds = Feed.all#find_by_user_id(params[:id])
 
     respond_to do |format|
       format.html { render :index }

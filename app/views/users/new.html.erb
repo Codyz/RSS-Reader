@@ -14,9 +14,11 @@
     <strong>Input RSS Feed URLs</strong>
     <br>
     <%= f.fields_for(:feeds) do |q|%>
-      <%= q.label :url, "URL" %>
+      <%= q.label :url, "Feed URL"%>
       <%= q.text_field :url %>
       <br>
+      <%= q.label :url, "Feed Title"%>
+      <%= q.text_field :title %>
     <% end%>
   </div>
   <button type="button" id="add_feed" >Add More Feeds</button>
@@ -30,12 +32,15 @@
     var clickCount = 0;
     var input1 = '<input id="user_feeds_attributes_'
     var input2 = '_url" name="user[feeds_attributes]['
-    var input3 = '][url]" size="30" type="text" />'
-
+    var input3 = '][url]" size="30" type="text" placeholder="Feed URL"/>'
+    var input4 = '<input id="user_feeds_attributes_'
+    var input5 = '_title" name="user[feeds_attributes]['
+    var input6 = '][title]" size="30" type="text" placeholder="Feed Title"/>'
 
     $('#add_feed').click(function() {
       clickCount += 1;
       $('#url-feeds').append(input1 + clickCount + input2 + clickCount + input3 + '<br>')
+      $('#url-feeds').append(input4 + clickCount + input5 + clickCount + input6 + '<br>')
     })
   });
 </script>

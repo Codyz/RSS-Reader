@@ -1,10 +1,10 @@
-<h3><%= feeds[0].user.email %>'s Feeds</h3>
-
+<h1>All Feeds</h1>
+<ul>
 <% feeds.each(function (feed) { %>
 <li>
-  <% var user_id = feeds[0].user.id %>
-  <a href="#/users/<%=user_id %>/feeds/<%=feed.id %>">
-    <%= feed.title %>
+  <a href="#/<%= feed.attributes.id %>">
+    <%= feed.attributes.title %>
   </a>
 </li>
 <% }); %>
+</ul>
