@@ -1,0 +1,41 @@
+<h1>Create User</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :email, "Email: " %>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :password, "Password: " %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.label :password_confirmation, "Password Confirmation: " %>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <div id="url-feeds">
+    <strong>Input RSS Feed URLs</strong>
+    <br>
+    <%= f.fields_for(:feeds) do |q|%>
+      <%= q.label :url, "URL" %>
+      <%= q.text_field :url %>
+      <br>
+    <% end%>
+  </div>
+  <button type="button" id="add_feed" >Add More Feeds</button>
+
+  <br>
+  <%= f.submit%>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var clickCount = 0;
+    var input1 = '<input id="user_feeds_attributes_'
+    var input2 = '_url" name="user[feeds_attributes]['
+    var input3 = '][url]" size="30" type="text" />'
+
+
+    $('#add_feed').click(function() {
+      clickCount += 1;
+      $('#url-feeds').append(input1 + clickCount + input2 + clickCount + input3 + '<br>')
+    })
+  });
+</script>

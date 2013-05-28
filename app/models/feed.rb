@@ -3,6 +3,6 @@ class Feed < ActiveRecord::Base
 
   validates :user, :url, presence: true
 
-  belongs_to :user, :inverse_of :feeds
+  belongs_to :user, inverse_of: :feeds
   has_many :entries
 end
