@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
     if @user.save
       # flash[success] = "User saved"
+      @user.feeds.each do |feed|
+        feed.fetch_all
+      end
       redirect_to root_url
     else
       # flash.error = "Something went wrong"

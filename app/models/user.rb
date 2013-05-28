@@ -9,6 +9,5 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password_digest, :email, :password_confirmation, :presence => true
   validates :password, :confirmation => true
-
-
+  validates :email, :uniqueness => true
 end
