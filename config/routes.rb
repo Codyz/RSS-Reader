@@ -9,5 +9,7 @@ RssReader::Application.routes.draw do
     end
   end
 
-  root to: "users#new"
+  resource :session
+
+  root to: "feeds#index"
 end
