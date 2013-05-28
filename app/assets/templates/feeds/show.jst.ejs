@@ -1,0 +1,10 @@
+<h2>Entries</h2>
+<ul>
+<% entries.each(function (entry) { %>
+<li>
+  <a href="#/feeds/<%= entry.get('feed').get('id') %>/entries/<%= id %>">
+    <%= entry.attributes.title %>
+  </a>
+</li>
+<% }); %>
+</ul>
