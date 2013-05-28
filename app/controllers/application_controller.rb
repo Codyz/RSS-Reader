@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find_by_session_token(cookies[session_token])
+    User.find_by_session_token(cookies["session_token"])
   end
 
 
