@@ -7,7 +7,8 @@ R.Routers.FeedsRouter = Backbone.Router.extend ({
 
   routes: {
     "": "index",
-    "feeds/:id": "show"
+    "feeds/:id": "show",
+    "feeds/:feed_id/entries/:entry_id": "entryShow"
   },
 
   index: function() {
@@ -24,9 +25,19 @@ R.Routers.FeedsRouter = Backbone.Router.extend ({
     var that = this;
 
     var feedEntriesView = new R.Views.FeedEntriesView({
-      collection: that.feeds.get(id).get('entries'),
-      id: that.id
+      collection: that.feeds.get(id).get('entries')
     });
     that.$content.html(feedEntriesView.render().$el);
+  },
+
+  entryShow: function(feed_id, entry_id) {
+    var that = this;
+
+    var entryView = new R.Views.EntryView({
+      model: that.feeds.get(feed_id).get('entries').get(entry_id)
+    });
+    that.$content.html(entryView.render().$el);
   }
+
+
 })

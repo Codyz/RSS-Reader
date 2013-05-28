@@ -3,8 +3,7 @@ R.Views.FeedEntriesView = Backbone.View.extend ({
     var that = this;
 
     var renderedContent = JST["feeds/show"]({
-      entries: that.collection,
-      id: that.id
+      entries: that.collection
     });
 
     that.$el.html(renderedContent);
