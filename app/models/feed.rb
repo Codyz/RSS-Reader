@@ -20,7 +20,8 @@ class Feed < ActiveRecord::Base
   end
 
   def create_entry(item)
-    new_entry = self.entries.build(guid: item[:guid])
+    new_entry = self.entries.build(guid: item[:guid], title: item[:title],
+     description: item[:description])
     new_entry.save
   end
 end

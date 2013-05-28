@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528142220) do
+ActiveRecord::Schema.define(:version => 20130528151929) do
 
   create_table "entries", :force => true do |t|
     t.integer  "feed_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "guid"
+    t.string   "title"
+    t.text     "description"
   end
 
   create_table "feeds", :force => true do |t|
