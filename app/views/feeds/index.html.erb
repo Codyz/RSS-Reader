@@ -6,4 +6,13 @@
 
 
 <script type="text/javascript">
+  $(function () {
+    var feeds = <%= @feeds.to_json.html_safe %>;
+
+    window.R.initialize(
+      $("#sidebar")[0],
+      $("#content")[0],
+      feeds
+    );
+  });
 </script>

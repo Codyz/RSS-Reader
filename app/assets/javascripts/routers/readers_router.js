@@ -6,7 +6,7 @@ R.Routers.ReadersRouter = Backbone.Router.extend ({
   },
 
   routes: {
-    "users/:id/feeds": "index"
+    "users/:id/feeds": "index",
     "new": "create",
     "users/:id/feeds/:id": "show"
   },

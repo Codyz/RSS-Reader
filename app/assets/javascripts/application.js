@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require backbone-rails
-//= require backbone-relational-rails
-//= require ejs
+//= require backbone-relational
+//= require reader
 //
-//= require ../templates
-//= require ./routers
-//= require ./views
-//= require ./collections
-//= require ./models
+//= require_tree ../templates
+//= require_tree ./routers
+//= require_tree ./views
+//= require_tree ./collections
+//= require_tree ./models
 //= require_tree .
