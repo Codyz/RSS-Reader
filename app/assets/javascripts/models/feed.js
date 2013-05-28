@@ -1,4 +1,4 @@
-R.Models.Feed = Backbone.RelationalModel.extend ({
+R.Models.Feed = Backbone.RelationalModel.extend({
   relations: [{
     type: Backbone.HasMany,
     key: 'entries',

@@ -1,3 +1,3 @@
-R.Collections.Feeds = Backbone.Collection.extend ({
+R.Collections.Feeds = Backbone.Collection.extend({
   model: R.Models.Feed
 })
