@@ -9,4 +9,4 @@ R.Models.Feed = Backbone.RelationalModel.extend ({
     }
   }]
   // urlRoot: ???
-})
+});

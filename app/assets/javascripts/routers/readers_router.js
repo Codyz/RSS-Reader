@@ -1,4 +1,4 @@
-R.Routers.ReadersRouter = Backbone.Router.extend ({
+R.Routers.ReaderRouter = Backbone.Router.extend ({
   initialize: function(sidebar, content, feeds) {
     this.$sidebar = $(sidebar);
     this.$content = $(content);
@@ -18,7 +18,7 @@ R.Routers.ReadersRouter = Backbone.Router.extend ({
       collection: that.feeds
     });
 
-    that.$sidebar.html(feeds.IndexView.render().$el);
+    that.$sidebar.html(feedsIndexView.render().$el);
     that.$content.html("<H1>Contents Here</h1>");
   }
 
